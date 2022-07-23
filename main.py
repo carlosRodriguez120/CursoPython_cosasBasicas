@@ -97,3 +97,68 @@
 # print(miSet)
 # sorteo = s3.pop()
 # print(sorteo)
+
+#boleanos----------------------------------------------------------------------
+
+# var1=True
+# var2=False
+#
+# print(type(var1))
+# print(type(var2))
+
+# num = 5<2+3         <--------- crea un boleano de forma indirecta
+# print(type(num))
+# print(num)
+
+# num = 5==2+3
+# print(type(num))
+# print(num)
+
+
+# num = bool(5>6)
+# print(type(num))
+# print(num)
+
+# list = [1,2,3,4,5,6,7]
+# control = 5 in list
+# print(type(control))
+# print(control)
+
+"""
+-------------------------------------------------------------------------------------------------------------------------
+proyecto analizador de texto
+en python
+
+"""
+
+texto=str(input("Por favor ingrese su texto"))
+letra1=input("ingrese la primer letra a buscar")
+letra2=input("ingrese la segunda letra a buscar")
+letra3=input("ingrese la tercera letra a buscar")
+
+texto = texto.lower()
+
+letra1 = letra1.lower()
+letra2 = letra2.lower()
+letra3 = letra3.lower()
+
+
+
+print(f"la letra {letra1} aparece {texto.count(letra1)} veces en  el texto")
+print(f"la letra {letra2} aparece {texto.count(letra2)} veces en  el texto")
+print(f"la letra {letra3} aparece {texto.count(letra3)} veces en  el texto")
+
+result = len(texto.split())
+print(f"el texto tiene {result} palabras")
+
+print(f"la primer letra del texto es {texto[0]}")
+print(f"la ultima letra del texto es {texto[-1]}")
+
+lista =texto.split()
+print(texto.split())
+
+
+print(lista[::-1])
+print((" ").join(lista[::-1]))
+
+print("python" in texto)
