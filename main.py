@@ -259,6 +259,123 @@ en python
 # print(lista)
 
 # enumerate-------------------------------------------------------------------------------
-lista = ["a", "b", "c", "d", "e"]
-for index, n in enumerate(lista):
-    print(index, n)
+# lista = ["a", "b", "c", "d", "e"]
+# for index, n in enumerate(lista):
+#     print(index, n)
+#
+# lista_nombres = ["Marcos", "Laura", "Mónica", "Javier", "Celina", "Marta", "Darío", "Emiliano", "Melisa"]
+#
+# for n in lista_nombres:
+#     if n.startswith("M"):
+#         print(lista_nombres.index(n))
+
+# funcion zip------------------------------------------------------------------------------------------------
+# lista_nombres = ["Marcos", "Laura", "Mónica"]
+# edades = [23,43,31,34,5345,54,43,4]
+# ciudades= ["colombia","andres","miguel"]
+# combinacion = list(zip(lista_nombres,edades,ciudades))
+# print(type(combinacion))
+# print(combinacion)
+#
+# for n,e,c in combinacion:
+#     print(f"{n} tiene {e} y vive en {c}")
+
+# capitales = ["Berlín", "Tokio", "París", "Helsinki", "Ottawa", "Canberra"]
+# paises = ["Alemania", "Japón", "Francia", "Finlandia", "Canadá", "Australia"]
+# combinacion = list(zip(capitales, paises))
+#
+# for c, p in combinacion:
+#     print(f"La capital de {p} es {c}")
+
+# min y max ---------------------------------------------------------------------------------------------------
+# numeros = [12,3,34,4,54,5,6,6,6,4,4,54,4356,345,3,45]
+# print(min(numeros))
+# print(max(numeros))
+#
+#
+# nombre=["Carlos","endres","juan"]
+# for n in nombre:
+#     print(min(n.lower()))
+
+# diccionario_edades = {"Carlos":55, "María":42, "Mabel":78, "José":44, "Lucas":24, "Rocío":35, "Sebastián":19, "Catalina":2,"Darío":49}
+# edad_minima = min(diccionario_edades.values())
+# print(edad_minima)
+#
+# ultimo_nombre = max(diccionario_edades.keys())
+# print(ultimo_nombre)
+
+# RANDOM----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# from random import *
+
+# aleatorio = randint(0, 50)
+# aleatorioFloat = uniform(0, 50)
+# print(aleatorio)
+# print(round(aleatorioFloat, 4))  # round para limitar el numero de decimales a 4
+#
+# print(round(random(),1))  # un numero decimal entre 0 y 1
+#
+#
+# lista = ["azul", "amarillo", "rojo", "negro"]
+# print(choice(lista))   #aleatorio de listas DE STRING
+
+# numeros = list(range(5,50,5))
+# print(numeros)
+# shuffle(numeros)    #MEZCLA LAS LISTAS
+# print(numeros)
+# numeros.sort()
+# print(numeros)
+
+# nombres = ["Carlos", "Julia", "Nicole", "Laura", "Mailen"]
+# sorteo=choice(nombres)
+# print(sorteo)
+
+# comprension de listas-----------------------------------------------------------------------------------------------------------------------------------------------
+# palabra = "python"
+#
+#
+#
+# numeros = [num for num in range(0,21,2)]
+# print(numeros)
+#
+# letras = [letra for letra in palabra]
+# print(letras)
+
+# valores = [1, 2, 3, 4, 5, 6, 9.5]
+# valores_pares = [ n for n in valores if (n%2==0)]
+# print(valores_pares)
+
+# temperatura_fahrenheit = [32, 212, 275]
+# celsius = [(t-32)*5/9 for t in temperatura_fahrenheit ]
+# print(celsius)
+
+
+# from random import *
+#
+# nombre = str(input("por favor ingresa TU NOMBRE"))
+#
+# print(f"Bienvenido {nombre} tienes 8 intentos para adivinar un numero entre 1 y 100")
+# intentos = 8
+#
+# numero = randint(0, 101)
+# print(numero)
+#
+# while intentos > 0:
+#     usuario = int(input("ingresa el numero"))
+#     if numero == usuario:
+#         print("haz asertado")
+#         print("felicidades")
+#         break
+#     elif usuario > 100 or usuario < 0:
+#         print("elije un numero que este en rango")
+#
+#     elif numero > usuario:
+#         print("debes elegir un numero mayor")
+#     elif numero < usuario:
+#         print("elige un numero menor")
+#
+#     intentos -= 1
+#     print(f"te quedan {intentos}")
+#
+# print("haz perdido")
+
