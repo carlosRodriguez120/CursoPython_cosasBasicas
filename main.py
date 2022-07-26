@@ -130,6 +130,7 @@ proyecto analizador de texto
 en python
 
 """
+
 #
 # texto=str(input("Por favor ingrese su texto"))
 # letra1=input("ingrese la primer letra a buscar")
@@ -305,9 +306,9 @@ en python
 # print(ultimo_nombre)
 
 # RANDOM----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+#
 # from random import *
-
+#
 # aleatorio = randint(0, 50)
 # aleatorioFloat = uniform(0, 50)
 # print(aleatorio)
@@ -318,14 +319,14 @@ en python
 #
 # lista = ["azul", "amarillo", "rojo", "negro"]
 # print(choice(lista))   #aleatorio de listas DE STRING
-
+#
 # numeros = list(range(5,50,5))
 # print(numeros)
 # shuffle(numeros)    #MEZCLA LAS LISTAS
 # print(numeros)
 # numeros.sort()
 # print(numeros)
-
+#
 # nombres = ["Carlos", "Julia", "Nicole", "Laura", "Mailen"]
 # sorteo=choice(nombres)
 # print(sorteo)
@@ -379,3 +380,148 @@ en python
 #
 # print("haz perdido")
 
+# METODOS --------------------------------------------------------------------------------------------------------------------
+
+# texto = ",:_#,,,,,,:::____##Pyt%on_ _Total,,,,,,::#"
+# te = texto.lstrip(',_#:%,,,,,,,::#')
+# print(te)
+
+# frutas = ["mango", "banana", "cereza", "ciruela", "pomelo"]
+# frutas.insert(4,"mangostino")
+# print(frutas)
+
+# marcas_smartphones = {"Samsung", "Xiaomi", "Apple", "Huawei", "LG"}
+# marcas_tv = {"Sony", "Philips", "Samsung", "LG"}
+# conjuntos_aislados= marcas_tv.isdisjoint(marcas_smartphones)
+# print(conjuntos_aislados)
+
+# def potencia(num, expo):
+#     resultado = num ** expo
+#     return resultado
+#
+#
+# print(potencia(2, 3))
+#
+#
+# def invertir_palabra(palabra):
+#     soluc = palabra[::-1]
+#     return soluc.upper()
+#
+#
+# print(invertir_palabra("python"))
+# lista_numeros = [2, 4345, 234, 234234, 65, 453, 45]
+#
+#
+# def suma_menores(lista):
+#     contador = 0
+#     for n in lista:
+#         if n > 0 and n < 1000:
+#             contador = contador + n
+#     return contador
+#
+#
+# def cantidad_pares(lista):
+#     contador = 0
+#     for n in lista:
+#         if n % 2 == 0:
+#             contador += 1
+#     return contador
+#
+# print(cantidad_pares(lista_numeros))
+#
+# print(suma_menores(lista_numeros))
+
+# from random import *
+#
+# listaPalitos = ["-", "--", "---", "----"]
+#
+#
+# def mezclar(palitos):
+#     shuffle(palitos)
+#     return (palitos)
+#
+#
+# def probarSuerte():
+#     intento = ""
+#     while intento not in ["1", "2", "3", "4"]:
+#         intento = input("ingresa un numero del 1 al 4")
+#
+#     return int(intento)
+#
+#
+# def comprobarIntento(listaDePalitos):
+#     intentoV=False
+#     while intentoV ==False:
+#         intento=probarSuerte()
+#         if listaDePalitos[intento - 1] == "-":
+#             print("a lavar los platos")
+#             print(f"te ha tocado {listaDePalitos[intento - 1]}")
+#             intentoV = True
+#         else:
+#             print("esta vez te salvaste")
+#             intentoV = False
+#
+#     print("sali del ciclo")
+#
+#
+#
+# mezcla = mezclar(listaPalitos)
+# print(mezcla)
+#
+#
+# comprobarIntento(mezcla)
+
+# ----------------------------------------------------------------------------
+# """
+# metodo args
+# """
+# def suma (*args):
+#     return sum(args)
+#
+# print(suma(2,5,6,5,4,3,34,5,3,5,34,534,53,45,345,3,45))
+
+
+# def sumaCuadrados(*args):
+#     lista=[]
+#     contador = 0
+#     for i in args:
+#         lista.append(i**2)
+#
+#
+#     for i in lista:
+#         contador+=i
+#
+#
+#     return lista,contador
+#
+# print(sumaCuadrados(1,2,3,4,5,6,7))
+
+"""
+ejercicio 1
+"""
+
+
+def devovler_distintos(a, b, c):
+    lista = []
+    lista.append(a)
+    lista.append(b)
+    lista.append(c)
+    suma = 0
+    for n in lista:
+        suma += n
+
+    print(suma)
+    if suma > 15:
+        return max(lista)
+    elif suma < 10:
+        return min(lista)
+    elif suma<=15 and suma>=10:
+        n1 =max(lista)
+        n2 = min(lista)
+        lista.remove(n1)
+        lista.remove(n2)
+        return lista
+
+
+
+print(devovler_distintos(10, 1, 2))
