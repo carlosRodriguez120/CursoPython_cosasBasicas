@@ -496,32 +496,173 @@ en python
 #
 # print(sumaCuadrados(1,2,3,4,5,6,7))
 
-"""
-ejercicio 1
-"""
+# """
+# ejercicio 1
+# """
+#
+#
+# def devovler_distintos(a, b, c):
+#     lista = []
+#     lista.append(a)
+#     lista.append(b)
+#     lista.append(c)
+#     suma = 0
+#     for n in lista:
+#         suma += n
+#
+#     print(suma)
+#     if suma > 15:
+#         return max(lista)
+#     elif suma < 10:
+#         return min(lista)
+#     elif suma<=15 and suma>=10:
+#         n1 =max(lista)
+#         n2 = min(lista)
+#         lista.remove(n1)
+#         lista.remove(n2)
+#         return lista
+#
+#
+#
+# print(devovler_distintos(10, 1, 2))
+
+"""proyecto juego de ahorcado"""
+# from random import choice
+#
+# palabras = ['panadero', 'dinosaurio', 'helipuerto', 'tiburon']
+# letras_correctas = []
+# letras_incorrectas = []
+# intentos = 6
+# aciertos = 0
+# juego_terminado = False
+#
+#
+# def elegir_palbra(lista_palabras):
+#     palabra_elegida = choice(lista_palabras)
+#     letras_unicas = len(set(palabra_elegida))
+#
+#     return palabra_elegida, letras_unicas
+#
+#
+# def pedir_letra():
+#     letra_elegida = ''
+#     es_valida = False
+#     abecedario = 'abcdefghijklmnñopqrstuvwxyz'
+#
+#     while not es_valida:
+#         letra_elegida = input("Elige una letra: ")
+#         if letra_elegida in abecedario and len(letra_elegida) == 1:
+#             es_valida = True
+#         else:
+#             print("No has elegido una letra correcta")
+#
+#     return letra_elegida
+#
+#
+# def mostrar_nuevo_tablero(palabra_elegida):
+#
+#     lista_oculta = []
+#
+#     for l in palabra_elegida:
+#         if l in letras_correctas:
+#             lista_oculta.append(l)
+#         else:
+#             lista_oculta.append('-')
+#
+#     print(' '.join(lista_oculta))
+#
+#
+# def chequear_letra(letra_elegida, palabra_oculta, vidas, coincidencias):
+#
+#     fin = False
+#
+#     if letra_elegida in palabra_oculta:
+#         letras_correctas.append(letra_elegida)
+#         coincidencias += 1
+#     else:
+#         letras_incorrectas.append(letra_elegida)
+#         vidas -= 1
+#
+#     if vidas == 0:
+#         fin = perder()
+#     elif coincidencias == letras_unicas:
+#         fin = ganar(palabra_oculta)
+#
+#     return vidas, fin, coincidencias
+#
+#
+# def perder():
+#     print("Te has quedado sin vidas")
+#     print("La palabra oculta era " + palabra)
+#
+#     return True
+#
+#
+# def ganar(palabra_descubierta):
+#     mostrar_nuevo_tablero(palabra_descubierta)
+#     print("Felicitaciones, has encontrado la palabra!!!")
+#
+#     return True
+#
+#
+# palabra, letras_unicas = elegir_palbra(palabras)
+#
+# while not juego_terminado:
+#     print('\n' + '*' * 20 + '\n')
+#     mostrar_nuevo_tablero(palabra)
+#     print('\n')
+#     print('Letras incorrectas: ' + '-'.join(letras_incorrectas))
+#     print(f'Vidas: {intentos}')
+#     print('\n' + '*' * 20 + '\n')
+#     letra = pedir_letra()
+#
+#     intentos, terminado, aciertos = chequear_letra(letra,palabra,intentos,aciertos)
+#
+#     juego_terminado = terminado
+
+"""manipular archivos  con python"""#-----------------------------------------------------------------------------------------------------------
+
+# mi_archivo = open("texto.txt")
+# print(mi_archivo.read())
+# unaLinea = mi_archivo.readline()
+# print(unaLinea)
+# print(type(unaLinea))
+# mi_archivo.close()
+
+# archivo = open("prueba1.txt", "a" )#--------------------------> ,W , A y vacio , w para sobreescribir lo que haya en el archivo(solo escritura), A para agregar datos al archivo (lectura y escritura) y si se deja vacio toma el archivo de (solo lectura)
+# archivo.write("hola soy nuevo text\n")
+# archivo.write("""soy la segunda linea
+# como estan
+# esta es la forma de escribir con
+# saltos de lineas""")
+#
+# archivo.close()
+import os
+# ruta = os.getcwd()
+# print(ruta)
+# print(type(ruta))
+# ruta =os.chdir("C:\\Users\\USER\\Desktop\\cosas\\python")
+# archivo = open("archivo.txt")
+# #archivo.write("""este
+# # es
+# # el
+# # archivo
+# # de
+# # prueba
+# # de
+# # python""")
+# print(archivo.read())
+# ruta =os.makedirs("C:\\Users\\USER\\Desktop\\cosas\\python\\carlos")
+
+# os.rmdir("C:\\Users\\USER\\Desktop\\cosas\\python\\carlos")
+from pathlib import Path,PureWindowsPath
+carpeta = Path("/Users/USER/Desktop/cosas/python") /"archivo.txt"
+
+print(carpeta.read_text())
+print(carpeta.name)
+print(carpeta.suffix)
+print(carpeta.stem)
+rutaWindows = PureWindowsPath(carpeta)
+print(rutaWindows)
 
 
-def devovler_distintos(a, b, c):
-    lista = []
-    lista.append(a)
-    lista.append(b)
-    lista.append(c)
-    suma = 0
-    for n in lista:
-        suma += n
-
-    print(suma)
-    if suma > 15:
-        return max(lista)
-    elif suma < 10:
-        return min(lista)
-    elif suma<=15 and suma>=10:
-        n1 =max(lista)
-        n2 = min(lista)
-        lista.remove(n1)
-        lista.remove(n2)
-        return lista
-
-
-
-print(devovler_distintos(10, 1, 2))
