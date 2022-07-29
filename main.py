@@ -190,10 +190,10 @@ en python
 #     print(f"{num1} y {num2} son iguales")
 
 # for-----------------------------------------------------------------------------------
-# lista = ["1", "2", "3", "4", "6", "7",]
-#
-# for letra in lista:
-#     print(f"letra {letra} y va en el espacio {lista.index(letra)}")
+lista = ["1", "2", "3", "4", "6", "7",]
+
+for letra in lista:
+    print(f"letra {letra} y va en el espacio {lista.index(letra)}")
 
 
 # lista = ["andres", "pablo","juan","pedro","laura","andres"]
@@ -211,17 +211,17 @@ en python
 # print(valor)
 
 
-# arreglo = [[1,2,3,4,5],[1,2,3,4,5],[5,4,3,2,1]]
-# for a,b,c,d,e in arreglo:
-#     print(a)
-#     print(b)
-#     print(c)
-#     print(d)
-#     print(e)
+arreglo = [[1,2,3,4,5],[1,2,3,4,5],[5,4,3,2,1]]
+for a,b,c,d,e in arreglo:
+     print(a)
+     print(b)
+     print(c)
+     print(d)
+     print(e)
 
-# alumnos_clase = ["María", "José", "Carlos", "Martina", "Isabel", "Tomás", "Daniela"]
-# for nombre in alumnos_clase:
-#     print(f"Hola {nombre}")
+alumnos_clase = ["María", "José", "Carlos", "Martina", "Isabel", "Tomás", "Daniela"]
+for nombre in alumnos_clase:
+       print(f"Hola {nombre}")
 
 
 # lista_numeros = [1, 5, 8, 7, 6, 8, 2, 5, 2, 6, 4, 8, 5, 9, 8, 3, 5, 4, 2, 5, 6, 4]
