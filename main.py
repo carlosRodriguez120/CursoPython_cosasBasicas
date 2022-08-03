@@ -190,10 +190,10 @@ en python
 #     print(f"{num1} y {num2} son iguales")
 
 # for-----------------------------------------------------------------------------------
-lista = ["1", "2", "3", "4", "6", "7",]
+#lista = ["1", "2", "3", "4", "6", "7",]
 
-for letra in lista:
-    print(f"letra {letra} y va en el espacio {lista.index(letra)}")
+#for letra in lista:
+#    print(f"letra {letra} y va en el espacio {lista.index(letra)}")
 
 
 # lista = ["andres", "pablo","juan","pedro","laura","andres"]
@@ -665,4 +665,8 @@ print(carpeta.stem)
 rutaWindows = PureWindowsPath(carpeta)
 print(rutaWindows)
 
+from so import *
+system("cls")
+print("impresion de texto, consola limpia")
+print
 
