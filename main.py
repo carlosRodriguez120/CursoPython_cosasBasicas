@@ -637,6 +637,7 @@ en python
 # saltos de lineas""")
 #
 # archivo.close()
+from cgitb import text
 import os
 
 # ruta = os.getcwd()
@@ -666,181 +667,319 @@ import os
 # rutaWindows = PureWindowsPath(carpeta)
 # print(rutaWindows)
 
-"""proyecto recetario"""
+# """proyecto recetario"""
+#
+# import os
+# from pathlib import Path
+# from os import system
+#
+# mi_ruta = Path(Path.home(), "Recetas")
+#
+#
+# def contar_recetas(ruta):
+#     contador = 0
+#     for txt in Path(ruta).glob("**/*.txt"):
+#         contador += 1
+#
+#     return contador
+#
+#
+# def inicio():
+#     system('cls')
+#     print('*' * 50)
+#     print('*' * 5 + " Bienvenido al administrador de recetas " + '*' * 5)
+#     print('*' * 50)
+#     print('\n')
+#     print(f"Las recetas se encuentran en {mi_ruta}")
+#     print(f"Total recetas: {contar_recetas(mi_ruta)}")
+#
+#     eleccion_menu = 'x'
+#     while not eleccion_menu.isnumeric() or int(eleccion_menu) not in range(1,7):
+#         print("Elige una opcion:")
+#         print('''
+#         [1] - Leer receta
+#         [2] - Crear receta nueva
+#         [3] - Crear categoria nueva
+#         [4] - Eliminar receta
+#         [5] - Eliminar categoria
+#         [6] - Salir del programa''')
+#         eleccion_menu = input()
+#
+#     return int(eleccion_menu)
+#
+#
+# def mostrar_categorias(ruta):
+#     print("Categorias:")
+#     ruta_categorias = Path(ruta)
+#     lista_categorias = []
+#     contador = 1
+#
+#     for carpeta in ruta_categorias.iterdir():
+#         carpeta_str = str(carpeta.name)
+#         print(f"[{contador}] - {carpeta_str}")
+#         lista_categorias.append(carpeta)
+#         contador += 1
+#
+#     return lista_categorias
+#
+#
+# def elegir_categoria(lista):
+#     eleccion_correcta = 'x'
+#
+#     while not eleccion_correcta.isnumeric() or int(eleccion_correcta) not in range(1, len(lista) + 1):
+#         eleccion_correcta = input("\nElije una categoria: ")
+#
+#     return lista[int(eleccion_correcta) - 1]
+#
+#
+# def mostrar_recetas(ruta):
+#     print("Recetas:")
+#     ruta_recetas = Path(ruta)
+#     lista_recetas = []
+#     contador = 1
+#
+#     for receta in ruta_recetas.glob('*.txt'):
+#         receta_str = str(receta.name)
+#         print(f"[{contador}] - {receta_str}")
+#         lista_recetas.append(receta)
+#         contador += 1
+#
+#     return lista_recetas
+#
+#
+# def elegir_recetas(lista):
+#     eleccion_receta = 'x'
+#
+#     while not eleccion_receta.isnumeric() or int(eleccion_receta) not in range(1, len(lista) + 1):
+#         eleccion_receta = input("\nElije una receta: ")
+#
+#     return lista[int(eleccion_receta) - 1]
+#
+#
+# def leer_receta(receta):
+#     print(Path.read_text(receta))
+#
+#
+# def crear_receta(ruta):
+#     existe = False
+#
+#     while not existe:
+#         print("Escribe el nombre de tu receta: ")
+#         nombre_receta = input() + '.txt'
+#         print("Escribe tu nueva receta: ")
+#         contenido_receta = input()
+#         ruta_nueva = Path(ruta, nombre_receta)
+#
+#         if not os.path.exists(ruta_nueva):
+#             Path.write_text(ruta_nueva, contenido_receta)
+#             print(f"Tu receta {nombre_receta} ha sido creada")
+#             existe = True
+#         else:
+#             print("Lo siento, esa receta ya existe")
+#
+#
+# def crear_categoria(ruta):
+#     existe = False
+#
+#     while not existe:
+#         print("Escribe el nombre de la nueva categoria: ")
+#         nombre_categoria = input()
+#         ruta_nueva = Path(ruta, nombre_categoria)
+#
+#         if not os.path.exists(ruta_nueva):
+#             Path.mkdir(ruta_nueva)
+#             print(f"Tu nueva categoria {nombre_categoria} ha sido creada")
+#             existe = True
+#         else:
+#             print("Lo siento, esa categoria ya existe")
+#
+#
+# def eliminar_receta(receta):
+#     Path(receta).unlink()
+#     print(f"La receta {receta.name} ha sido eliminada")
+#
+#
+# def eliminar_categoria(categoria):
+#     Path(categoria).rmdir()
+#     print(F"La categoria {categoria.name} ha sido eliminada")
+#
+#
+# def volver_inicio():
+#     eleccion_regresar = 'x'
+#
+#     while eleccion_regresar.lower() != 'v':
+#         eleccion_regresar = input("\nPresione V para volver al menu: ")
+#
+#
+# finalizar_programa = False
+#
+# while not finalizar_programa:
+#     menu = inicio()
+#
+#     if menu == 1:
+#         mis_categorias = mostrar_categorias(mi_ruta)
+#         mi_categoria = elegir_categoria(mis_categorias)
+#         mis_recetas = mostrar_recetas(mi_categoria)
+#         mi_receta = elegir_recetas(mis_recetas)
+#         leer_receta(mi_receta)
+#         volver_inicio()
+#     elif menu == 2:
+#         mis_categorias = mostrar_categorias(mi_ruta)
+#         mi_categoria = elegir_categoria(mis_categorias)
+#         crear_receta(mi_categoria)
+#         volver_inicio()
+#     elif menu == 3:
+#         crear_categoria(mi_ruta)
+#         volver_inicio()
+#     elif menu == 4:
+#         mis_categorias = mostrar_categorias(mi_ruta)
+#         mi_categoria = elegir_categoria(mis_categorias)
+#         mis_recetas = mostrar_recetas(mi_categoria)
+#         mi_receta = elegir_recetas(mis_recetas)
+#         eliminar_receta(mi_receta)
+#         volver_inicio()
+#     elif menu == 5:
+#         mis_categorias = mostrar_categorias(mi_ruta)
+#         mi_categoria = elegir_categoria(mis_categorias)
+#         eliminar_categoria(mi_categoria)
+#         volver_inicio()
+#     elif menu == 6:
+#         finalizar_programa = True
 
-import os
-from pathlib import Path
-from os import system
+# from collections import Counter
+#
+# lista = Counter([1, 2, 3, 6, 7, 1, 2, 4, 5, 5, 5, 5, 3, 2, 6, 7])
+#
+# contador = list(lista)
+# print(contador)
 
-mi_ruta = Path(Path.home(), "Recetas")
-
-
-def contar_recetas(ruta):
-    contador = 0
-    for txt in Path(ruta).glob("**/*.txt"):
-        contador += 1
-
-    return contador
+# import os
+# import shutil
 
 
-def inicio():
-    system('cls')
-    print('*' * 50)
-    print('*' * 5 + " Bienvenido al administrador de recetas " + '*' * 5)
-    print('*' * 50)
-    print('\n')
-    print(f"Las recetas se encuentran en {mi_ruta}")
-    print(f"Total recetas: {contar_recetas(mi_ruta)}")
-
-    eleccion_menu = 'x'
-    while not eleccion_menu.isnumeric() or int(eleccion_menu) not in range(1,7):
-        print("Elige una opcion:")
-        print('''
-        [1] - Leer receta
-        [2] - Crear receta nueva
-        [3] - Crear categoria nueva
-        [4] - Eliminar receta
-        [5] - Eliminar categoria
-        [6] - Salir del programa''')
-        eleccion_menu = input()
-
-    return int(eleccion_menu)
+# print(os.getcwd())
+# archivo = open("curso.txt", "w")
+# archivo.write("texto de prueva")
+# archivo.close()
+# print(os.listdir())
 
 
-def mostrar_categorias(ruta):
-    print("Categorias:")
-    ruta_categorias = Path(ruta)
-    lista_categorias = []
-    contador = 1
-
-    for carpeta in ruta_categorias.iterdir():
-        carpeta_str = str(carpeta.name)
-        print(f"[{contador}] - {carpeta_str}")
-        lista_categorias.append(carpeta)
-        contador += 1
-
-    return lista_categorias
-
-
-def elegir_categoria(lista):
-    eleccion_correcta = 'x'
-
-    while not eleccion_correcta.isnumeric() or int(eleccion_correcta) not in range(1, len(lista) + 1):
-        eleccion_correcta = input("\nElije una categoria: ")
-
-    return lista[int(eleccion_correcta) - 1]
+#shutil.move("curso.txt","C:\\users\\USER\\Desktop")
+#send2trash.send2trash("curso.txt")
+# ruta ="C:\\users\\USER\\Desktop\\carpeta_principal"
+# print(os.walk(ruta))
+# print("\n")
+# for carpeta,subcarpeta,archivo in os.walk(ruta):
+#     print(f"en la carpeta{carpeta}")
+#     print(f"las subcarpetas son{subcarpeta}")
+#     for sub in subcarpeta:
+#         print(f"\t {sub}")
+#     print(f"los archivos son:")
+#     for arch in archivo:
+#         print(f"\t {arch}")
+#     print("\n")
 
 
-def mostrar_recetas(ruta):
-    print("Recetas:")
-    ruta_recetas = Path(ruta)
-    lista_recetas = []
-    contador = 1
+# from  datetime import date
+# from re import T
+# from turtle import home
+# # miHora = datetime.time(14,59)
+# print(type(miHora))
+# print(miHora)
 
-    for receta in ruta_recetas.glob('*.txt'):
-        receta_str = str(receta.name)
-        print(f"[{contador}] - {receta_str}")
-        lista_recetas.append(receta)
-        contador += 1
+# miFecha = datetime.date(2020,12,24)
+# print(miFecha.today())
 
-    return lista_recetas
+# fecha = datetime(2020,12,24,12,32,9)
+# fecha.today()
+# print(fecha)
+# from datetime import datetime
+# import time
 
+# hoy= datetime.today()
+# print(f"hoy es {hoy}")
+# minutos=hoy.minute
+# print(minutos)
 
-def elegir_recetas(lista):
-    eleccion_receta = 'x'
-
-    while not eleccion_receta.isnumeric() or int(eleccion_receta) not in range(1, len(lista) + 1):
-        eleccion_receta = input("\nElije una receta: ")
-
-    return lista[int(eleccion_receta) - 1]
-
-
-def leer_receta(receta):
-    print(Path.read_text(receta))
-
-
-def crear_receta(ruta):
-    existe = False
-
-    while not existe:
-        print("Escribe el nombre de tu receta: ")
-        nombre_receta = input() + '.txt'
-        print("Escribe tu nueva receta: ")
-        contenido_receta = input()
-        ruta_nueva = Path(ruta, nombre_receta)
-
-        if not os.path.exists(ruta_nueva):
-            Path.write_text(ruta_nueva, contenido_receta)
-            print(f"Tu receta {nombre_receta} ha sido creada")
-            existe = True
-        else:
-            print("Lo siento, esa receta ya existe")
+# def prueba_for(num):
+#     lista=[]
+#     for n in range(1,num):
+#         lista.append(n)
+#     return lista
 
 
-def crear_categoria(ruta):
-    existe = False
-
-    while not existe:
-        print("Escribe el nombre de la nueva categoria: ")
-        nombre_categoria = input()
-        ruta_nueva = Path(ruta, nombre_categoria)
-
-        if not os.path.exists(ruta_nueva):
-            Path.mkdir(ruta_nueva)
-            print(f"Tu nueva categoria {nombre_categoria} ha sido creada")
-            existe = True
-        else:
-            print("Lo siento, esa categoria ya existe")
+# def prueba_while(num):
+#     contador =1 
+#     lista = []
+#     while contador <=num:
+#         lista.append(contador)
+#         contador+=1
+#     return lista
 
 
-def eliminar_receta(receta):
-    Path(receta).unlink()
-    print(f"La receta {receta.name} ha sido eliminada")
+# # inicio = time.time()
+# # prueba_while(100000000)
+# # fin = time.time()
+# # print(f"el tiempo while fue: {fin-inicio}")
 
 
-def eliminar_categoria(categoria):
-    Path(categoria).rmdir()
-    print(F"La categoria {categoria.name} ha sido eliminada")
+# # inicio = time.time()
+# # prueba_for(100000000)
+# # fin = time.time()
+# # print(f"el tiempo  for fue: {fin-inicio}")
 
+# import timeit
 
-def volver_inicio():
-    eleccion_regresar = 'x'
+# declaracionF = """
+# prueba_for(10)
+# """
+# mi_setupF ="""
+# def prueba_for(num):
+#     lista=[]
+#     for n in range(1,num):
+#         lista.append(n)
+#     return lista
+# """
+# duracionFor= timeit.timeit(declaracionF,mi_setupF,number=1000000)
+# print(f"la duracion de la pruba for es de {duracionFor}")
 
-    while eleccion_regresar.lower() != 'v':
-        eleccion_regresar = input("\nPresione V para volver al menu: ")
+# declaracionW = """
+# prueba_while(10)
+# """
+# mi_setupW ="""
+# def prueba_while(num):
+#     contador =1 
+#     lista = []
+#     while contador <=num:
+#         lista.append(contador)
+#         contador+=1
+#     return lista
+# """
+# duracionWhile =timeit.timeit(declaracionW,mi_setupW,number=1000000)
+# print(f"la duracion del while es de {duracionWhile}")
+# import math
 
+# resultado = math.factorial(7)
+# print(resultado)
 
-finalizar_programa = False
+import re
 
-while not finalizar_programa:
-    menu = inicio()
+texto =" si necesitas ayuda llama al 313-892-3668 las 24 horas al servicio de ayuda online" 
+palabra = "ayuda"
 
-    if menu == 1:
-        mis_categorias = mostrar_categorias(mi_ruta)
-        mi_categoria = elegir_categoria(mis_categorias)
-        mis_recetas = mostrar_recetas(mi_categoria)
-        mi_receta = elegir_recetas(mis_recetas)
-        leer_receta(mi_receta)
-        volver_inicio()
-    elif menu == 2:
-        mis_categorias = mostrar_categorias(mi_ruta)
-        mi_categoria = elegir_categoria(mis_categorias)
-        crear_receta(mi_categoria)
-        volver_inicio()
-    elif menu == 3:
-        crear_categoria(mi_ruta)
-        volver_inicio()
-    elif menu == 4:
-        mis_categorias = mostrar_categorias(mi_ruta)
-        mi_categoria = elegir_categoria(mis_categorias)
-        mis_recetas = mostrar_recetas(mi_categoria)
-        mi_receta = elegir_recetas(mis_recetas)
-        eliminar_receta(mi_receta)
-        volver_inicio()
-    elif menu == 5:
-        mis_categorias = mostrar_categorias(mi_ruta)
-        mi_categoria = elegir_categoria(mis_categorias)
-        eliminar_categoria(mi_categoria)
-        volver_inicio()
-    elif menu == 6:
-        finalizar_programa = True
+busqueda = re.findall(palabra,texto)
+for n in re.finditer(palabra,texto):
+    print(n.span())
+
+texto1 =" si necesitas ayuda llama al 313-892-3668 o al 313-894-1562 las 24 horas al servicio de ayuda online" 
+patron = r"\d{3}-\d{3}-\d{4}"
+
+buscar = re.findall(patron,texto1)
+for n in re.finditer(patron,texto1):
+    print(f"({n})")
+
+correo = input("ingrese el correo")
+patron1 = r"\w+@gmail.com |\w+@hotmail.com"
+
+for n in re.finditer(patron1,correo):
+    print(f"({n})")
