@@ -9,6 +9,7 @@ class Cliente(Persona):
     def __init__(self, nombre, apellido, edad, estadoCuenta):
         self.estadoCuenta = estadoCuenta
         super().__init__(nombre, apellido, edad)
+   
 
     def __str__(self):
         return f"""

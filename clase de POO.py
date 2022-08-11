@@ -1,12 +1,8 @@
-
-
-
-
-
-
-
 class Pajaro:
     alas=True
+    text = "hola como estas"
+    text.upper
+    print(text.upper)
 
     def __init__(self, color, especie):
         self.color = color

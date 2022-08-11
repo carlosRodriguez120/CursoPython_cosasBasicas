@@ -190,11 +190,19 @@ en python
 #     print(f"{num1} y {num2} son iguales")
 
 # for-----------------------------------------------------------------------------------
+<<<<<<< HEAD
+#lista = ["1", "2", "3", "4", "6", "7",]
+
+#for letra in lista:
+#    print(f"letra {letra} y va en el espacio {lista.index(letra)}")
+
+=======
 # lista = ["1", "2", "3", "4", "6", "7",]
 #
 # for letra in lista:
 #     print(f"letra {letra} y va en el espacio {lista.index(letra)}")
 #
+>>>>>>> cd7c4a16a3c1563f7b3c6fec40debd3a03ac7ff4
 
 # lista = ["andres", "pablo","juan","pedro","laura","andres"]
 # for nombre in lista:
@@ -856,6 +864,10 @@ import os
 # import os
 # import shutil
 
+from so import *
+system("cls")
+print("impresion de texto, consola limpia")
+print
 
 # print(os.getcwd())
 # archivo = open("curso.txt", "w")
